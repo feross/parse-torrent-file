@@ -64,7 +64,7 @@ function decodeTorrentFile (torrent) {
   result.announce = [].concat.apply([], result.announceList)
 
   // handle url-list (BEP19 / web seeding)
-  result.urlList = (torrent['url-list'] || []).map(function (url) {
+  result.urlList = ((torrent['url-list'] && Array.isArray(torrent['url-list'])) || []).map(function (url) {
     return url.toString()
   })
 
