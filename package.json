@@ -16,6 +16,7 @@
     "brfs": "^1.0.0",
     "standard": "^6.0.5",
     "tape": "^4.0.0",
+    "webtorrent-fixtures": "rom1504/webtorrent-fixtures#add_parse_torrent_file_fixtures",
     "zuul": "^3.0.0"
   },
   "homepage": "https://github.com/feross/parse-torrent-file",

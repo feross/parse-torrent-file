@@ -1,12 +1,9 @@
-var fs = require('fs')
 var parseTorrentFile = require('../')
-var path = require('path')
 var test = require('tape')
-
-var leaves = fs.readFileSync(path.join(__dirname, 'torrents/leaves.torrent'))
+var fixtures = require('webtorrent-fixtures')
 
 test('encode', function (t) {
-  var parsedTorrent = parseTorrentFile(leaves)
+  var parsedTorrent = parseTorrentFile(fixtures.leaves.torrent)
   var buf = parseTorrentFile.encode(parsedTorrent)
   var doubleParsedTorrent = parseTorrentFile(buf)
 
