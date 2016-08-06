@@ -34,8 +34,7 @@ function decodeTorrentFile (torrent) {
 
   var result = {}
   result.info = torrent.info
-  result.infoBuffer = bencode.encode(torrent.info)
-  result.infoHash = sha1.sync(result.infoBuffer)
+  result.infoHash = sha1.sync(bencode.encode(torrent.info))
 
   result.name = (torrent.info['name.utf-8'] || torrent.info.name).toString()
 

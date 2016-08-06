@@ -23,6 +23,5 @@ try {
 }
 
 delete parsedTorrent.info
-delete parsedTorrent.infoBuffer
 
 console.log(JSON.stringify(parsedTorrent, undefined, 2))
