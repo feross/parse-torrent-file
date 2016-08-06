@@ -5,7 +5,6 @@ var test = require('tape')
 
 var leavesParsed = {
   infoHash: 'd2474e86c95b19b8bcfdb92bc12c9d44667cfa36',
-  infoHashBuffer: new Buffer('d2474e86c95b19b8bcfdb92bc12c9d44667cfa36', 'hex'),
   name: 'Leaves of Grass by Walt Whitman.epub',
   created: new Date('Thu Aug 01 2013 06:27:46 GMT-0700 (PDT)'),
   createdBy: 'uTorrent/3300',
@@ -58,7 +57,6 @@ var leavesParsed = {
 
 var leavesMagnetParsed = {
   infoHash: 'd2474e86c95b19b8bcfdb92bc12c9d44667cfa36',
-  infoHashBuffer: new Buffer('d2474e86c95b19b8bcfdb92bc12c9d44667cfa36', 'hex'),
   name: 'Leaves of Grass by Walt Whitman.epub',
   announce: [],
   urlList: [],
@@ -109,7 +107,6 @@ var leavesMagnetParsed = {
 
 var numbersParsed = {
   infoHash: '89d97c2261a21b040cf11caa661a3ba7233bb7e6',
-  infoHashBuffer: new Buffer('89d97c2261a21b040cf11caa661a3ba7233bb7e6', 'hex'),
   name: 'numbers',
   created: new Date('+047910-02-15T17:44:02.000Z'),
   announce: [],
