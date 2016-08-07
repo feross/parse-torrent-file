@@ -5,7 +5,6 @@ var test = require('tape')
 
 var leavesParsed = {
   infoHash: 'd2474e86c95b19b8bcfdb92bc12c9d44667cfa36',
-  infoHashBuffer: new Buffer('d2474e86c95b19b8bcfdb92bc12c9d44667cfa36', 'hex'),
   name: 'Leaves of Grass by Walt Whitman.epub',
   created: new Date('Thu Aug 01 2013 06:27:46 GMT-0700 (PDT)'),
   createdBy: 'uTorrent/3300',
@@ -52,13 +51,11 @@ var leavesParsed = {
     name: new Buffer('TGVhdmVzIG9mIEdyYXNzIGJ5IFdhbHQgV2hpdG1hbi5lcHVi', 'base64'),
     'piece length': 16384,
     pieces: new Buffer('H5w/Wb7sB5cV7FMyS96FaeSgtOvsQjB9TOVVe105ZMXvVdNUz0puzHvxvK950R+l4L4GWTyPqvwMK6LPdtccWwFSayMAf56ZKb6vxRUeZREJMaG0TCG/Hmi5E4+QSV5pDbxV9XLkwpRMus8m5rOuinIp2IqvoF9h6q5qvz8Hy225Z3zGre1N05heRYYnVn+nY58GX3GxiVQwSspjZnKeC0dz13roDKqWpSSATf5Lm9PervmZyd1RAnRnUZ1eslYa4swBRn3l9kMKYLy6JHl2ku+odw0j3wqDDZHLNbNAeoi6oFkNyMmqahIPJ0Nn3Nhn6I6DOMVyoG48gBsp9RnfUys+dvZwz2ruUxB/PTk3hIP2nPgPpWix6sU7UGFZ6YjYvBaSLRJdd9gD1lLDyjBwwW7tkXKrUG0g5SLqPxq2dLP5I9dv6PRP8y43LDs3ZWTG+18NvlIWTwNin9EyJja6uywBS32uWC2kE2OWUmHmzhK0NwHwqMntFSCnDroARACiZ3ZfbT3Vx761vTx1898qVFYKYYARR/pOx89WjnA6ywTlYQpNVtzCQtAyk+lEbPXkV9jrPZWI/ZDGmN6bDa2SmAkGwCbYwUCPoI/k7A==', 'base64')
-  },
-  infoBuffer: new Buffer('ZDY6bGVuZ3RoaTM2MjAxN2U0Om5hbWUzNjpMZWF2ZXMgb2YgR3Jhc3MgYnkgV2FsdCBXaGl0bWFuLmVwdWIxMjpwaWVjZSBsZW5ndGhpMTYzODRlNjpwaWVjZXM0NjA6H5w/Wb7sB5cV7FMyS96FaeSgtOvsQjB9TOVVe105ZMXvVdNUz0puzHvxvK950R+l4L4GWTyPqvwMK6LPdtccWwFSayMAf56ZKb6vxRUeZREJMaG0TCG/Hmi5E4+QSV5pDbxV9XLkwpRMus8m5rOuinIp2IqvoF9h6q5qvz8Hy225Z3zGre1N05heRYYnVn+nY58GX3GxiVQwSspjZnKeC0dz13roDKqWpSSATf5Lm9PervmZyd1RAnRnUZ1eslYa4swBRn3l9kMKYLy6JHl2ku+odw0j3wqDDZHLNbNAeoi6oFkNyMmqahIPJ0Nn3Nhn6I6DOMVyoG48gBsp9RnfUys+dvZwz2ruUxB/PTk3hIP2nPgPpWix6sU7UGFZ6YjYvBaSLRJdd9gD1lLDyjBwwW7tkXKrUG0g5SLqPxq2dLP5I9dv6PRP8y43LDs3ZWTG+18NvlIWTwNin9EyJja6uywBS32uWC2kE2OWUmHmzhK0NwHwqMntFSCnDroARACiZ3ZfbT3Vx761vTx1898qVFYKYYARR/pOx89WjnA6ywTlYQpNVtzCQtAyk+lEbPXkV9jrPZWI/ZDGmN6bDa2SmAkGwCbYwUCPoI/k7GU=', 'base64')
+  }
 }
 
 var leavesMagnetParsed = {
   infoHash: 'd2474e86c95b19b8bcfdb92bc12c9d44667cfa36',
-  infoHashBuffer: new Buffer('d2474e86c95b19b8bcfdb92bc12c9d44667cfa36', 'hex'),
   name: 'Leaves of Grass by Walt Whitman.epub',
   announce: [],
   urlList: [],
@@ -103,13 +100,11 @@ var leavesMagnetParsed = {
     name: new Buffer('TGVhdmVzIG9mIEdyYXNzIGJ5IFdhbHQgV2hpdG1hbi5lcHVi', 'base64'),
     'piece length': 16384,
     pieces: new Buffer('H5w/Wb7sB5cV7FMyS96FaeSgtOvsQjB9TOVVe105ZMXvVdNUz0puzHvxvK950R+l4L4GWTyPqvwMK6LPdtccWwFSayMAf56ZKb6vxRUeZREJMaG0TCG/Hmi5E4+QSV5pDbxV9XLkwpRMus8m5rOuinIp2IqvoF9h6q5qvz8Hy225Z3zGre1N05heRYYnVn+nY58GX3GxiVQwSspjZnKeC0dz13roDKqWpSSATf5Lm9PervmZyd1RAnRnUZ1eslYa4swBRn3l9kMKYLy6JHl2ku+odw0j3wqDDZHLNbNAeoi6oFkNyMmqahIPJ0Nn3Nhn6I6DOMVyoG48gBsp9RnfUys+dvZwz2ruUxB/PTk3hIP2nPgPpWix6sU7UGFZ6YjYvBaSLRJdd9gD1lLDyjBwwW7tkXKrUG0g5SLqPxq2dLP5I9dv6PRP8y43LDs3ZWTG+18NvlIWTwNin9EyJja6uywBS32uWC2kE2OWUmHmzhK0NwHwqMntFSCnDroARACiZ3ZfbT3Vx761vTx1898qVFYKYYARR/pOx89WjnA6ywTlYQpNVtzCQtAyk+lEbPXkV9jrPZWI/ZDGmN6bDa2SmAkGwCbYwUCPoI/k7A==', 'base64')
-  },
-  infoBuffer: new Buffer('ZDY6bGVuZ3RoaTM2MjAxN2U0Om5hbWUzNjpMZWF2ZXMgb2YgR3Jhc3MgYnkgV2FsdCBXaGl0bWFuLmVwdWIxMjpwaWVjZSBsZW5ndGhpMTYzODRlNjpwaWVjZXM0NjA6H5w/Wb7sB5cV7FMyS96FaeSgtOvsQjB9TOVVe105ZMXvVdNUz0puzHvxvK950R+l4L4GWTyPqvwMK6LPdtccWwFSayMAf56ZKb6vxRUeZREJMaG0TCG/Hmi5E4+QSV5pDbxV9XLkwpRMus8m5rOuinIp2IqvoF9h6q5qvz8Hy225Z3zGre1N05heRYYnVn+nY58GX3GxiVQwSspjZnKeC0dz13roDKqWpSSATf5Lm9PervmZyd1RAnRnUZ1eslYa4swBRn3l9kMKYLy6JHl2ku+odw0j3wqDDZHLNbNAeoi6oFkNyMmqahIPJ0Nn3Nhn6I6DOMVyoG48gBsp9RnfUys+dvZwz2ruUxB/PTk3hIP2nPgPpWix6sU7UGFZ6YjYvBaSLRJdd9gD1lLDyjBwwW7tkXKrUG0g5SLqPxq2dLP5I9dv6PRP8y43LDs3ZWTG+18NvlIWTwNin9EyJja6uywBS32uWC2kE2OWUmHmzhK0NwHwqMntFSCnDroARACiZ3ZfbT3Vx761vTx1898qVFYKYYARR/pOx89WjnA6ywTlYQpNVtzCQtAyk+lEbPXkV9jrPZWI/ZDGmN6bDa2SmAkGwCbYwUCPoI/k7GU=', 'base64')
+  }
 }
 
 var numbersParsed = {
   infoHash: '89d97c2261a21b040cf11caa661a3ba7233bb7e6',
-  infoHashBuffer: new Buffer('89d97c2261a21b040cf11caa661a3ba7233bb7e6', 'hex'),
   name: 'numbers',
   created: new Date('+047910-02-15T17:44:02.000Z'),
   announce: [],
@@ -158,8 +153,7 @@ var numbersParsed = {
     name: new Buffer('bnVtYmVycw==', 'base64'),
     'piece length': 16384,
     pieces: new Buffer('H3RkjlCmpnCOxUqzJ6Fj1VNrfO0=', 'base64')
-  },
-  infoBuffer: new Buffer('ZDU6ZmlsZXNsZDY6bGVuZ3RoaTFlNDpwYXRobDU6MS50eHRlZWQ2Omxlbmd0aGkyZTQ6cGF0aGw1OjIudHh0ZWVkNjpsZW5ndGhpM2U0OnBhdGhsNTozLnR4dGVlZTQ6bmFtZTc6bnVtYmVyczEyOnBpZWNlIGxlbmd0aGkxNjM4NGU2OnBpZWNlczIwOh90ZI5QpqZwjsVKsyehY9VTa3ztZQ==', 'base64')
+  }
 }
 
 test('parse single file torrent', function (t) {

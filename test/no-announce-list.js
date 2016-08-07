@@ -7,7 +7,6 @@ var bitloveIntro = fs.readFileSync(path.join(__dirname, 'torrents/bitlove-intro.
 
 var bitloveParsed = {
   infoHash: '4cb67059ed6bd08362da625b3ae77f6f4a075705',
-  infoHashBuffer: new Buffer('4cb67059ed6bd08362da625b3ae77f6f4a075705', 'hex'),
   name: 'bl001-introduction.webm',
   announce: [
     'http://t.bitlove.org/announce'
@@ -52,8 +51,7 @@ var bitloveParsed = {
     name: new Buffer('YmwwMDEtaW50cm9kdWN0aW9uLndlYm0=', 'base64'),
     'piece length': 1048576,
     pieces: new Buffer('kKddzU6I0ofHrFWZwQj2A2wTxM4e9UaL3/mkRmrU5EZHeYHLZ9B5Mx+pEaZjRRKAlT7bcj5nYRlX3A/hKrrWBm4pxyPwGwkI7DDg5zdRSohVr9qOFKRef3l+tHuCstCjsspfNn4fSVk1Fcobk60Bw+4FDjXwT1wuFbmrsSMigALMpqfYj8n8mdJFg+EycEoCDS8SG/xhK3YnzZLis5rUPDW+uyiI9xQ8KWa7TV904Lh1glhWaHX0uxqfpjHuNbzXRpsej/N9ZaLLvu6twUjtaBtpnoipQPeW9RwJFcaRIcgdhQVWeL8Zi7KfyeUE7Yx/fjhjxuHGqMgkVp8cwJUEmNzrA8SrTnfa3l9UJGVZxAkVtwCk9zTO4JLEe+LTl6+/BqnppXOmOjxoPSqlAa0hKhSVIIt/+7FzzleCKRaVZSs/YjO/TqNknHeZoYSPBsrel5h1Jds3x5nkW9Avwl6swS4YxsEbTaP7THPfkwezk5/sPNXw3xecUKScbKM=', 'base64')
-  },
-  infoBuffer: new Buffer('ZDY6bGVuZ3RoaTE5MjExNzI5ZTQ6bmFtZTIzOmJsMDAxLWludHJvZHVjdGlvbi53ZWJtMTI6cGllY2UgbGVuZ3RoaTEwNDg1NzZlNjpwaWVjZXMzODA6kKddzU6I0ofHrFWZwQj2A2wTxM4e9UaL3/mkRmrU5EZHeYHLZ9B5Mx+pEaZjRRKAlT7bcj5nYRlX3A/hKrrWBm4pxyPwGwkI7DDg5zdRSohVr9qOFKRef3l+tHuCstCjsspfNn4fSVk1Fcobk60Bw+4FDjXwT1wuFbmrsSMigALMpqfYj8n8mdJFg+EycEoCDS8SG/xhK3YnzZLis5rUPDW+uyiI9xQ8KWa7TV904Lh1glhWaHX0uxqfpjHuNbzXRpsej/N9ZaLLvu6twUjtaBtpnoipQPeW9RwJFcaRIcgdhQVWeL8Zi7KfyeUE7Yx/fjhjxuHGqMgkVp8cwJUEmNzrA8SrTnfa3l9UJGVZxAkVtwCk9zTO4JLEe+LTl6+/BqnppXOmOjxoPSqlAa0hKhSVIIt/+7FzzleCKRaVZSs/YjO/TqNknHeZoYSPBsrel5h1Jds3x5nkW9Avwl6swS4YxsEbTaP7THPfkwezk5/sPNXw3xecUKScbKNl', 'base64')
+  }
 }
 
 test('parse torrent with no announce-list', function (t) {

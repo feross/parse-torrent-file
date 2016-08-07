@@ -34,9 +34,7 @@ function decodeTorrentFile (torrent) {
 
   var result = {}
   result.info = torrent.info
-  result.infoBuffer = bencode.encode(torrent.info)
-  result.infoHash = sha1.sync(result.infoBuffer)
-  result.infoHashBuffer = new Buffer(result.infoHash, 'hex')
+  result.infoHash = sha1.sync(bencode.encode(torrent.info))
 
   result.name = (torrent.info['name.utf-8'] || torrent.info.name).toString()
 
@@ -73,7 +71,7 @@ function decodeTorrentFile (torrent) {
   uniq(result.announce)
   uniq(result.urlList)
 
-  var files = torrent.info.files || [ torrent.info ]
+  var files = torrent.info.files || [torrent.info]
   result.files = files.map(function (file, i) {
     var parts = [].concat(result.name, file['path.utf-8'] || file.path || []).map(function (p) {
       return p.toString()
@@ -110,7 +108,7 @@ function encodeTorrentFile (parsed) {
   torrent['announce-list'] = (parsed.announce || []).map(function (url) {
     if (!torrent.announce) torrent.announce = url
     url = new Buffer(url, 'utf8')
-    return [ url ]
+    return [url]
   })
 
   torrent['url-list'] = parsed.urlList || []
