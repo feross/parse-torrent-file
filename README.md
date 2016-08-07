@@ -1,14 +1,10 @@
 # parse-torrent-file
-[![travis](https://img.shields.io/travis/feross/parse-torrent-file/master.svg)](https://travis-ci.org/feross/parse-torrent-file)
-[![npm](https://img.shields.io/npm/v/parse-torrent-file.svg)](https://npmjs.org/package/parse-torrent-file)
-[![downloads](https://img.shields.io/npm/dm/parse-torrent-file.svg)](https://npmjs.org/package/parse-torrent-file)
 
-#### Parse a .torrent file and return an object of keys/values
+[![travis](https://img.shields.io/travis/feross/parse-torrent-file/master.svg)](https://travis-ci.org/feross/parse-torrent-file) [![npm](https://img.shields.io/npm/v/parse-torrent-file.svg)](https://npmjs.org/package/parse-torrent-file) [![downloads](https://img.shields.io/npm/dm/parse-torrent-file.svg)](https://npmjs.org/package/parse-torrent-file)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/parse-torrent-file.svg)](https://saucelabs.com/u/parse-torrent-file)
 
-Works in node and the browser (with [browserify](http://browserify.org/)). This module is
-used by [WebTorrent](http://webtorrent.io)!
+Parse a .torrent file and return an object of keys/values. Works in node and the browser (with [browserify](http://browserify.org/)). This module is used by [WebTorrent](http://webtorrent.io)!
 
 ## install
 
@@ -18,7 +14,7 @@ npm install parse-torrent-file
 
 ## usage
 
-```js
+```javascript
 var parseTorrentFile = require('parse-torrent-file')
 var path = require('path')
 
@@ -36,7 +32,7 @@ console.log(parsed.name) // Prints "Leaves of Grass by Walt Whitman.epub"
 
 The `parsed` torrent object looks like this:
 
-```js
+```javascript
 {
   "infoHash": "d2474e86c95b19b8bcfdb92bc12c9d44667cfa36",
   "name": "Leaves of Grass by Walt Whitman.epub",
@@ -87,7 +83,7 @@ The `parsed` torrent object looks like this:
 
 To convert a parsed torrent back into a .torrent file buffer, call `parseTorrentFile.encode`.
 
-```js
+```javascript
 var parseTorrentFile = require('parse-torrent-file')
 
 // parse a torrent
