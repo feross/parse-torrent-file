@@ -39,7 +39,6 @@ The `parsed` torrent object looks like this:
 ```js
 {
   "infoHash": "d2474e86c95b19b8bcfdb92bc12c9d44667cfa36",
-  "infoHashBuffer": ...,
   "name": "Leaves of Grass by Walt Whitman.epub",
   "private": false,
   "created": "2013-08-01T13:27:46.000Z",
