@@ -4,9 +4,12 @@ var test = require('tape')
 
 test('encode', function (t) {
   var parsedTorrent = parseTorrentFile(fixtures.leaves.torrent)
+
   var buf = parseTorrentFile.encode(parsedTorrent)
   var doubleParsedTorrent = parseTorrentFile(buf)
 
+  console.log(buf.length, fixtures.leaves.torrent.length)
+  t.deepEqual(buf, fixtures.leaves.torrent)
   t.deepEqual(doubleParsedTorrent, parsedTorrent)
   t.end()
 })

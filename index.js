@@ -107,11 +107,13 @@ function encodeTorrentFile (parsed) {
     info: parsed.info
   }
 
-  torrent['announce-list'] = (parsed.announce || []).map(function (url) {
-    if (!torrent.announce) torrent.announce = url
-    url = new Buffer(url, 'utf8')
-    return [ url ]
-  })
+  if (parsed.announce.length > 0) {
+    torrent['announce-list'] = (parsed.announce || []).map(function (url) {
+      if (!torrent.announce) torrent.announce = url
+      url = new Buffer(url, 'utf8')
+      return [ url ]
+    })
+  }
 
   torrent['url-list'] = parsed.urlList || []
 
